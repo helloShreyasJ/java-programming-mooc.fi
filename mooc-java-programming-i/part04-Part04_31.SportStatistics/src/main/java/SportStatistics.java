@@ -13,14 +13,36 @@ public class SportStatistics {
         String teamName = scan.nextLine();
         
         ArrayList <Team> records = readRecords(file);
-        int count = 0;
+        int count = 0; int win = 0; int loss = 0;
+        
         for(Team team:records){
             if(team.getHomeTeam().contains(teamName) || team.getVisitingTeam().contains(teamName)){
                 count++;
+            }     
+        }
+        
+        
+        System.out.println("Games: " + count);
+        
+        for (Team team : records) {
+            if (team.getHomeTeam().equals(teamName)) {
+                if (team.getPointsht() > team.getPointsvt()) {
+                win++;
+            } else {
+                loss++;
+            }
+            } else if (team.getVisitingTeam().contains(teamName)) {
+                if (team.getPointsvt() > team.getPointsht()) {
+                    win++;
+                } else {
+                    loss++;
+                }
             }
         }
         
-        System.out.println("Games: " + count);
+        System.out.println("Wins: " + win);
+        System.out.println("Losses: " + loss);
+        
     }   
     public static ArrayList <Team> readRecords (String file){
         ArrayList <Team> teams = new ArrayList<>();

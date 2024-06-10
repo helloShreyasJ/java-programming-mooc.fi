@@ -29,5 +29,13 @@ public class Team {
     public int getPointsvt(){
         return pointsvt;
     }
+    
+    public int setWin(int winCount){
+        return winCount;
+    }
+    
+    public int setLoss(int lossCount){
+        return lossCount;
+    }
 }
 
