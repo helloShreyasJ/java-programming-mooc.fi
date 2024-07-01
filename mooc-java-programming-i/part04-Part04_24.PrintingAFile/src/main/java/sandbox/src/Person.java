@@ -5,13 +5,16 @@ public class Person {
     private int height;
 
     public Person(String name){
-        this(name, 0);
+        this(name,0,0,0);
     }
-    public Person(String name, int age){
+    public Person(String name, int height){
+        this(name,height,0,0);
+    }
+    public Person(String name, int height, int age, int weight){
         this.name = name;
         this.age = age;
-        this.weight = 0;
-        this.height = 0;
+        this.height = height;
+        this.weight = weight;
     }
 
     public void printPerson(){

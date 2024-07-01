@@ -1,4 +1,5 @@
 public class example {
+    @SuppressWarnings("null")
     public static void main(String[] args) {
         Person joan = new Person("joan ball");
         System.out.println(joan);
