@@ -3,18 +3,27 @@ public class Person {
     private int age;
     private int weight;
     private int height;
+    private SimpleDate birthday;
 
     public Person(String name){
-        this(name,0,0,0);
+        this(name,0,0,0,new SimpleDate(0,0,0));
     }
     public Person(String name, int height){
-        this(name,height,0,0);
+        this(name,height,0,0, new SimpleDate(0,0,0));
     }
-    public Person(String name, int height, int age, int weight){
+    public Person(String name,int day,int month,int year){
+        this.name = name;
+        this.birthday = new SimpleDate(day, month, year);
+    }
+    public Person(String name, SimpleDate birthday){
+        this(name,0,0,0,birthday);
+    }
+    public Person(String name, int height, int age, int weight,SimpleDate birthday){
         this.name = name;
         this.age = age;
         this.height = height;
         this.weight = weight;
+        this.birthday = birthday;
     }
 
     public void printPerson(){
@@ -41,7 +50,7 @@ public class Person {
     }
 
     public String toString(){
-        return this.name + " is " + this.age + " years old, and their BMI is " + bodyMassIndex();
+        return "This person's name is " + this.name + ", and their birthday is " + this.birthday;
     }
 
     public void setHeight(int height){
