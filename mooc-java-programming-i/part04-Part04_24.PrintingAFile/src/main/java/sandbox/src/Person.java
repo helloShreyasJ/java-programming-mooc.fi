@@ -44,15 +44,47 @@ public class Person {
             return false;
         }
     }
+    
+    public SimpleDate getBirthday(){
+        return this.birthday;
+    }
+    
+    public boolean isOlderThan(Person otherDude){
+        int ownYear = getBirthday().getYear();
+        int comparedYear = otherDude.getBirthday().getYear();
+        if(ownYear < comparedYear){
+            return true;
+        }
+        if(ownYear > comparedYear){
+            return false;
+        }
+        int ownMonth = getBirthday().getMonth();
+        int comparedMonth = otherDude.getBirthday().getMonth();
+        if(ownMonth < comparedMonth){
+            return true;
+        }
+        if(ownMonth > comparedMonth){
+            return false;
+        }
+        int ownDay = this.getBirthday().getDay();
+        int comparedDay = otherDude.getBirthday().getDay();
+
+        if (ownDay < comparedDay) {
+            return true;
+        }
+
+        return false;
+    }
+    
     public double bodyMassIndex(){
         double heightInMeters = this.height /100;
         return this.weight / (heightInMeters * heightInMeters);
     }
 
     public String toString(){
-        return "This person's name is " + this.name + ", and their birthday is " + this.birthday;
+        return "This person's name is " + this.name + ", and their birthday is on " + this.birthday;
     }
-
+    
     public void setHeight(int height){
         this.height = height;
     }

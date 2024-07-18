@@ -24,4 +24,25 @@ public class SimpleDate {
     public String toString(){
         return this.day + "." + this.month + "." + this.year;  
     }
+
+    //implementing the before method
+
+    public boolean before(SimpleDate compared){
+        if(this.year < compared.year){
+            return true;
+        }
+        if(this.year > compared.year){
+            return false;
+        }
+        if(this.month < compared.month){
+            return true;
+        }
+        if(this.month > compared.month){
+            return false;
+        }
+        if(this.day < compared.day){
+            return true;
+        }
+        return false;
+    }
 }
