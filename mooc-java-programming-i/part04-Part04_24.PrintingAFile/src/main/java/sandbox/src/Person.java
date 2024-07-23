@@ -75,6 +75,14 @@ public class Person {
 
         return false;
     }
+
+    public boolean olderThan(Person compared){
+        if(this.birthday.before(compared.getBirthday())){
+            return true;
+        } else{
+            return false;
+        }
+    }
     
     public double bodyMassIndex(){
         double heightInMeters = this.height /100;
