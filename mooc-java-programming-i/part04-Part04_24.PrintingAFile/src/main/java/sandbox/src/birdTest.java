@@ -24,5 +24,10 @@ public class birdTest {
         } else{
             System.out.println("The list does not contain red");
         }
+
+        /*
+         * What I understood from the output:
+         * if the
+         */
     }
 }
