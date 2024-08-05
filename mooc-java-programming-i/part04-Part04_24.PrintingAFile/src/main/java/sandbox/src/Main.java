@@ -22,5 +22,10 @@ public class Main{
             System.out.println(jake.getName() + " is not allowed on the ride");
         }
         System.out.println(deathLeap);
+
+        deathLeap.removeAllOnRide();
+        System.out.println(deathLeap.averageHeightOfPeopleOnRide());
+        System.out.println();
+        System.out.println(deathLeap);
     }
 }
