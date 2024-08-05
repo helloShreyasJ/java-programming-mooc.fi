@@ -1,12 +1,15 @@
+import java.util.ArrayList;
 public class amusementParkRide {
     private String name;
     private int minimumHeight;
     private int visitors;
+    private ArrayList<Person> riding;
 
     public amusementParkRide(String name, int minimumHeight){
         this.name = name;
         this.minimumHeight = minimumHeight;
         visitors = 0;
+        this.riding = new ArrayList<>();
     }
 
     public boolean isAllowedOn(Person person){
@@ -14,10 +17,15 @@ public class amusementParkRide {
             return false;
         } else{
             visitors++;
+            riding.add(person);
             return true;
         }
     }
     public String toString(){
-        return "Ride name: " + this.name + "\n Minimum height required to ride: " + this.minimumHeight + "\n Number of visitors currently: " + visitors; 
+       String isRiding = " ";
+       for(Person person:riding){
+            isRiding = isRiding + person.getName()  + "\n";
+       }
+       return this.name + ", miniumum height to ride: " + this.minimumHeight + ", visitors: " + this.visitors + "\n" + "riding: \n" + isRiding;
     }
 }
