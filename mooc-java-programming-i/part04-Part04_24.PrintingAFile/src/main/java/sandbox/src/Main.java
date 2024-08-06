@@ -27,5 +27,10 @@ public class Main{
         System.out.println(deathLeap.averageHeightOfPeopleOnRide());
         System.out.println();
         System.out.println(deathLeap);
+
+        System.out.println();
+        System.out.println(deathLeap.getTallest().getName());
+        Person tallest = deathLeap.getTallest();
+        System.out.println(tallest.getName());
     }
 }

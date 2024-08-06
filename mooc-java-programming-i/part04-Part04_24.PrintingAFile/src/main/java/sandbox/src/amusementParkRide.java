@@ -34,6 +34,16 @@ public class amusementParkRide {
 
         return 1.0 * sumOfHeights / riding.size();
     }
+    
+    public Person getTallest(){
+        Person tallestOfRiding = this.riding.get(0);
+
+        for(Person person: riding){
+            if(tallestOfRiding.getHeight() < person.getHeight()){
+                tallestOfRiding = person;
+            }
+        } return tallestOfRiding;
+    }
 
     public String toString(){
         
